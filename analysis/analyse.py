@@ -18,11 +18,10 @@ for s in subjects:
 save_file.close()
 
 a_positions = [0 for _ in subjects]
-num_tests = 20
 
-for _ in range(num_tests):
-    subprocess.run("cd .. && python3 main.py", shell = True, executable="/bin/bash")
-    num = find_number_before_string("../list.txt", "A")
+subprocess.run("cd .. && /bin/python3.11 main.py", shell = True, executable="/bin/bash")
+for n in range(10):
+    num = find_number_before_string(f"../out/list_{n}.txt", "A")
     if not num:
         exit(1)
     a_positions[num - 1] += 1
