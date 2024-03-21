@@ -1,8 +1,11 @@
 from person_arr import read_arr, write_arr, reset_arr
 from random import shuffle
+import subprocess
 
 save_file = "save.txt"
 # output_file = "list.txt"
+out_dir = "out"
+subprocess.run("mkdir out -p", shell = True, executable="/bin/bash")
 n = 10
 
 for i in range(n):
@@ -12,7 +15,7 @@ for i in range(n):
         exit(1)
 
     try:
-        f_out = open(f"out/list{i}.txt", "w")
+        f_out = open(f"{out_dir}/list_{i}.txt", "w")
     except Exception:
         exit(1)
 
